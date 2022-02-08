@@ -12,6 +12,11 @@ class Person:
     def __str__(self):
         return '[Person:%s,%s]'%(self.name,self.pay)
 
+class Menager(Person):
+    def giveRaise(self, percent,bonus=.10):
+        # self.pay=int(self.pay*(1+percent+bonus))
+        Person.giveRaise(self,percent+bonus)
+
 
 
 
@@ -25,4 +30,13 @@ if __name__=='__main__':
     print(bob.lastName(),anna.lastName())
     anna.giveRaise(.10)
     print(anna)
+    tom=Menager("Tomaasz Czarny","menadżer",50000)
+    tom.giveRaise(.10)
+    print(tom.lastName())
+    print(tom)
+
+    print("--wszystkie trzy--")
+    for object in (bob,anna,tom):
+        object.giveRaise(.10)
+        print(object)
 
