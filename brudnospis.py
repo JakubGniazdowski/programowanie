@@ -13,11 +13,9 @@ class Person:
         return '[Person:%s,%s]'%(self.name,self.pay)
 
 class Menager(Person):
-    def __init__(self,name,pay):
-        Person.__init__(self,name,"menadżer",pay)
     def giveRaise(self, percent,bonus=.10):
-        Person.giveRaise(self,percent+bonus)
-
+        self.pay=int(self.pay*(1+percent+bonus))
+        
 
 
 
@@ -31,7 +29,7 @@ if __name__=='__main__':
     print(bob.lastName(),anna.lastName())
     anna.giveRaise(.10)
     print(anna)
-    tom=Menager("Tomaasz Czarny",50000)
+    tom=Menager("Tomaasz Czarny","menadżer",50000)
     tom.giveRaise(.10)
     print(tom.lastName())
     print(tom)
@@ -40,4 +38,4 @@ if __name__=='__main__':
     for object in (bob,anna,tom):
         object.giveRaise(.10)
         print(object)
-
+    
