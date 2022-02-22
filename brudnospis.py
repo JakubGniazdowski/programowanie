@@ -21,7 +21,7 @@ class Menager(Person):
 
 
 
-if __name__=='__main__':
+if __name__=='__main__': 
     bob=Person('Robert zieliński')
     anna=Person('Anna Czerwona', job='programista',pay=100000)
     print(bob)
