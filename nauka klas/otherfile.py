@@ -28,3 +28,4 @@ def h2():
     def nested():
         nonlocal x
         x=44
+    
